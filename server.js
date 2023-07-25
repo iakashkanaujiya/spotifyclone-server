@@ -5,8 +5,7 @@ import http from "http";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
-import { fileURLToPath } from 'url';
-import path, { dirname } from 'path';
+import morgan from "morgan";
 
 const PORT = process.env.PORT || 4000;
 const app = express();
