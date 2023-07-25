@@ -31,16 +31,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//frontend
-// Get the current module's URL and convert it to a file path
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-app.get("*", (req, res) => {
-	return res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
 import allRoutes from "./routes.js";
 app.use("/api", allRoutes);
 
